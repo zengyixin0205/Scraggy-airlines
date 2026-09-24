@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redeem | Scraggy Airlines</title>
+<meta name="description" content="Redeem Scraggy Points for joke rewards. Spending points never lowers your tier.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="redeem">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+<main id="main">
+<section class="hero">
+<h1 class="headline">SPEND YOUR POINTS<br>ON SOMETHING</h1>
+<p class="sub">Spending points lowers your balance but never your pants. Rewards have no real-world value.</p>
+</section>
+<section id="redeem-guest" class="card narrow center" hidden>
+<p>Log in to redeem points.</p>
+<div class="actions"><a class="btn" href="login.html?next=redeem.html">Log in / Sign up</a></div>
+</section>
+<p id="redeem-balance" class="center big-num" role="status" style="font-size:1.6rem"></p>
+<div id="reward-grid" class="grid"></div>
+<aside id="wrong-wrong" class="quote" data-page="redeem" aria-label="A quote from Mdm Wrong-Wrong"></aside>
+</main>
+<footer id="site-footer" class="site-footer"></footer>
+<noscript><p style="text-align:center;padding:16px">This site needs JavaScript. Scraggy Airlines needs many things.</p></noscript>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/redeem.js"></script>
+</body>
+</html>

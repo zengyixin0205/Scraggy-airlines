@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>My Website</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home | Scraggy Airlines</title>
+<meta name="description" content="Scraggy Airlines: fly somewhere eventually. A funny parody airline.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <h1>Hello World!</h1>
-    <p>Welcome to my website.</p>
+<body data-page="home">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+<main id="main">
+<section class="hero">
+<h1 class="headline">FLY SOMEWHERE<br>EVENTUALLY</h1>
+<p class="sub">Scraggy Airlines. Now boarding. Eventually.</p>
+</section>
+<img data-mascot class="hero-mascot" alt="Scraggy, our CEO" width="240" height="240">
+<div class="actions">
+<a class="btn" href="book.html">Book a flight (no promises)</a>
+<a class="btn secondary" href="destinations.html">See destinations</a>
+</div>
+<div class="grid" aria-label="Scraggy Airlines by the numbers">
+<div class="card stat"><span class="big">0%</span>on-time since 2019</div>
+<div class="card stat"><span class="big">4</span>planes (we think)</div>
+<div class="card stat"><span class="big">3</span>destinations, all via SIA</div>
+<div class="card stat"><span class="big">1</span>CEO: Scraggy</div>
+</div>
+<h2>Why fly Scraggy?</h2>
+<div class="grid">
+<div class="card"><h3>Scraggy Points</h3><p>Earn points every flight. Reach Bronze, Gold, Platinum and Scraggy Pants. <a href="points.html">See the pants</a>.</p></div>
+<div class="card"><h3>Mystery baggage</h3><p>Your bags. Our mystery. <a href="baggage.html">Track your bag</a> (good luck).</p></div>
+<div class="card"><h3>Lost? Perfect.</h3><p>Our airport guide will make you more lost. <a href="airport.html">Open the guide</a>.</p></div>
+</div>
+<aside id="wrong-wrong" class="quote" data-page="home" aria-label="A quote from Mdm Wrong-Wrong"></aside>
+</main>
+<footer id="site-footer" class="site-footer"></footer>
+<noscript><p style="text-align:center;padding:16px">This site needs JavaScript. Scraggy Airlines needs many things.</p></noscript>
+<script type="module" src="js/main.js"></script>
+
 </body>
 </html>

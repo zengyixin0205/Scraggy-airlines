@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scraggy Points | Scraggy Airlines</title>
+<meta name="description" content="Scraggy Points: earn points by booking flights and reach Bronze, Gold, Platinum and Scraggy Pants.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="points">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+<main id="main">
+<section class="hero">
+<h1 class="headline">COLLECT POINTS.<br>WEAR THE PANTS.</h1>
+<p class="sub">Earn points by booking flights. Spend them in the <a href="redeem.html">rewards shop</a>. Your tier is based on lifetime points.</p>
+</section>
+<section id="points-guest" class="card narrow center" hidden>
+<h2 style="margin-top:0">Who are you?</h2>
+<p>Log in or sign up to see your Scraggy Points. You can log in on any device.</p>
+<div class="actions"><a class="btn" href="login.html">Log in</a><a class="btn secondary" href="login.html#signup">Sign up</a></div>
+</section>
+<section id="points-member" hidden>
+<div class="grid">
+<div class="card"><p>Welcome back, <strong id="pts-name"></strong></p><p class="big-num" id="pts-balance">0</p><p>points to spend</p></div>
+<div class="card"><p>Lifetime points (decides your tier)</p><p class="big-num" id="pts-lifetime">0</p><p><span id="pts-tier" class="badge"></span></p><p id="pts-perk"></p></div>
+</div>
+<div class="card" style="margin-top:16px"><label for="pts-progress">Progress to the next pants</label><progress id="pts-progress" value="0" max="1"></progress><p id="pts-next"></p></div>
+<h2>History</h2>
+<div class="table-wrap"><table><thead><tr><th>Date</th><th>What</th><th>Points</th></tr></thead><tbody id="ledger-rows"></tbody></table></div>
+</section>
+<h2>The pants</h2>
+<div class="table-wrap"><table><thead><tr><th>Tier</th><th>Lifetime points</th><th>Perk</th></tr></thead><tbody id="tier-rows"></tbody></table></div>
+<h2>How to earn</h2>
+<ul class="plain">
+<li>Flights to or from Scraggy House: 100 points each.</li>
+<li>Flights to or from Mdm Wrong-Wrong's or Lujin's: 250 points each.</li>
+<li>Scraggy First: +50 points per flight. Scraggy Class: +100 points per flight.</li>
+<li>A return trip is two flights, so it earns twice.</li>
+<li>Welcome bonus: 100 points. Finding a certain gate: 500 points.</li>
+</ul>
+<aside id="wrong-wrong" class="quote" data-page="points" aria-label="A quote from Mdm Wrong-Wrong"></aside>
+</main>
+<footer id="site-footer" class="site-footer"></footer>
+<noscript><p style="text-align:center;padding:16px">This site needs JavaScript. Scraggy Airlines needs many things.</p></noscript>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/points.js"></script>
+</body>
+</html>

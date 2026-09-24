@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a Flight | Scraggy Airlines</title>
+<meta name="description" content="Book a fake flight with Scraggy Airlines and earn Scraggy Points. Every flight starts or ends at SIA.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="book">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+<main id="main">
+<section class="hero">
+<h1 class="headline">BOOK A FLIGHT<br>(WE WILL TRY)</h1>
+<p class="sub">A joke booking form. No money is taken. Every flight starts or ends at Scraggy International Airport (SIA).</p>
+</section>
+<div id="book-app" class="narrow" style="max-width:760px">
+<p class="hint">Booking takes <span id="step-total"></span> quick steps.</p>
+<ol id="steps-nav" class="steps" aria-label="Booking steps"></ol>
+<form id="book-form" novalidate>
+<fieldset data-step="1"><legend>1. Trip</legend>
+<div class="options" role="radiogroup" aria-label="Trip type">
+<label class="opt"><input type="radio" name="tripType" value="oneway" checked>One way</label>
+<label class="opt"><input type="radio" name="tripType" value="return">Return (two flights, double points)</label>
+</div>
+<div class="field" style="margin-top:14px"><label for="from">From</label><select id="from" name="from"></select></div>
+<div class="field"><label for="to">To</label><select id="to" name="to"></select></div>
+<p id="route-msg" class="msg" role="alert"></p>
+<p class="hint">Every flight starts or ends at SIA.</p>
+<div class="field"><label for="date">Departure date</label><input type="date" id="date" name="date"></div>
+<div class="field" id="return-field" hidden><label for="returnDate">Return date</label><input type="date" id="returnDate" name="returnDate"></div>
+</fieldset>
+<fieldset data-step="2" hidden><legend>2. Aircraft</legend><div id="aircraft-options" class="options" role="radiogroup" aria-label="Aircraft"></div></fieldset>
+<fieldset data-step="3" hidden><legend>3. Class</legend><div id="class-options" class="options" role="radiogroup" aria-label="Class"></div></fieldset>
+<fieldset data-step="4" hidden><legend>4. Passenger</legend>
+<div class="field"><label for="name">Passenger name</label><input type="text" id="name" name="name" maxlength="40" autocomplete="off"><p class="hint">A fake name is fine.</p></div>
+<div class="field"><label for="seat">Seat</label><select id="seat" name="seat"><option value="window">Window</option><option value="aisle">Aisle</option><option value="somewhere" selected>Somewhere</option></select></div>
+<div class="field"><label for="snack">Snack</label><select id="snack" name="snack"></select><p id="snack-hint" class="hint"></p></div>
+<div class="field"><label for="bags">Bags</label><select id="bags" name="bags"><option>0</option><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><p class="hint">Bags will be lost in 1 to 5 places.</p></div>
+</fieldset>
+<fieldset data-step="5" hidden><legend>5. Fun extras</legend>
+<div class="field"><label for="reason">Reason for travelling</label><select id="reason" name="reason"></select></div>
+<label class="check"><input type="checkbox" name="t1">I accept that Scraggy is the CEO.</label>
+<label class="check"><input type="checkbox" name="t2">I accept that we may go somewhere else eventually.</label>
+</fieldset>
+<fieldset data-step="6" hidden><legend>6. Review and confirm</legend>
+<dl id="review" class="review"></dl>
+<p id="login-note" class="note" hidden>You are not logged in. Log in or sign up to confirm and earn points. Your answers will be kept.</p>
+</fieldset>
+<p id="step-msg" class="msg" role="alert"></p>
+<div class="form-nav">
+<button type="button" class="btn secondary" id="btn-back" hidden>Back</button>
+<button type="button" class="btn" id="btn-next">Next</button>
+<button type="button" class="btn" id="btn-confirm" hidden>Confirm (no money will be taken)</button>
+</div>
+</form>
+<div id="book-result" hidden></div>
+</div>
+<aside id="wrong-wrong" class="quote" data-page="book" aria-label="A quote from Mdm Wrong-Wrong"></aside>
+</main>
+<footer id="site-footer" class="site-footer"></footer>
+<noscript><p style="text-align:center;padding:16px">This site needs JavaScript. Scraggy Airlines needs many things.</p></noscript>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/book.js"></script>
+</body>
+</html>

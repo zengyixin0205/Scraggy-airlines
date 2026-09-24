@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baggage | Scraggy Airlines</title>
+<meta name="description" content="Scraggy Airlines baggage policy: your bags, our mystery.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="baggage">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+<main id="main">
+<section class="hero">
+<h1 class="headline">YOUR BAGS.<br>OUR MYSTERY.</h1>
+<p class="sub">We take great care of your bags. We just do not know where.</p>
+</section>
+<div class="grid">
+<div class="card"><h3>Carry-on</h3><p>Anything you can carry while we look away.</p></div>
+<div class="card"><h3>Checked bags</h3><p>Bags may arrive before you. Or after. Or as a different bag.</p></div>
+<div class="card"><h3>Lost bags</h3><p>Your bag is at SCG003. Or SCG007. Or Lujin's.</p></div>
+<div class="card"><h3>Fees</h3><p>Free. We are not sure how to charge for a service we cannot find.</p></div>
+</div>
+<h2>Bag tracker</h2>
+<form id="track-form" class="card narrow" novalidate>
+<div class="field"><label for="tag">Bag tag number</label><input type="text" id="tag" name="tag" maxlength="20" autocomplete="off"></div>
+<button class="btn" type="submit">Where is my bag?</button>
+<p id="track-out" class="msg" role="status"></p>
+</form>
+<aside id="wrong-wrong" class="quote" data-page="baggage" aria-label="A quote from Mdm Wrong-Wrong"></aside>
+</main>
+<footer id="site-footer" class="site-footer"></footer>
+<noscript><p style="text-align:center;padding:16px">This site needs JavaScript. Scraggy Airlines needs many things.</p></noscript>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/baggage.js"></script>
+</body>
+</html>

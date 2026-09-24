@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Airport Guide | Scraggy Airlines</title>
+<meta name="description" content="The Scraggy International Airport (SIA) guide: gates SCG001 to SCG011 and a secret Gate 9¾.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="airport">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+<main id="main">
+<section class="hero">
+<h1 class="headline">LOST? WE WILL MAKE YOU MORE LOST</h1>
+<p class="sub">Welcome to Scraggy International Airport (SIA). You are here (probably).</p>
+</section>
+<div class="actions"><button class="btn" id="directions-btn" type="button">Ask for directions</button></div>
+<p id="directions-out" class="msg center" role="status"></p>
+<ul id="gate-list" class="gates" aria-label="Gates"></ul>
+<aside id="wrong-wrong" class="quote" data-page="airport" aria-label="A quote from Mdm Wrong-Wrong"></aside>
+</main>
+<footer id="site-footer" class="site-footer"></footer>
+<noscript><p style="text-align:center;padding:16px">This site needs JavaScript. Scraggy Airlines needs many things.</p></noscript>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/airport.js"></script>
+</body>
+</html>

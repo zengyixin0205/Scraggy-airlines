@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in | Scraggy Airlines</title>
+<meta name="description" content="Log in or sign up for Scraggy Points with a username and password.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="login">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+<main id="main">
+<section class="hero">
+<h1 class="headline">WHO ARE YOU<br>(AGAIN)?</h1>
+<p class="sub">Choose a username and password. Use them to log in on any device.</p>
+</section>
+<div class="narrow">
+<p id="demo-note" class="note" hidden><strong>Demo mode:</strong> accounts are saved in this browser only. To make logins work on every device, the site owner needs to connect Supabase (see the README).</p>
+<div class="tabs" role="tablist" aria-label="Log in or sign up">
+<button type="button" class="btn secondary" role="tab" id="tab-login" aria-selected="true">Log in</button>
+<button type="button" class="btn secondary" role="tab" id="tab-signup" aria-selected="false">Sign up</button>
+</div>
+<form id="form-login" class="card" novalidate>
+<div class="field"><label for="l-user">Username</label><input type="text" id="l-user" name="username" autocomplete="username" maxlength="20" required></div>
+<div class="field"><label for="l-pass">Password</label><input type="password" id="l-pass" name="password" autocomplete="current-password" required></div>
+<button class="btn" type="submit">Log in</button>
+<p id="msg-login" class="msg" role="alert"></p>
+</form>
+<form id="form-signup" class="card" novalidate hidden>
+<div class="field"><label for="s-user">Choose a username</label><input type="text" id="s-user" name="username" autocomplete="username" maxlength="20" required><p class="hint">3 to 20 letters, numbers or underscores.</p></div>
+<div class="field"><label for="s-pass">Choose a password</label><input type="password" id="s-pass" name="password" autocomplete="new-password" required><p class="hint">At least 8 characters.</p></div>
+<div class="field"><label for="s-conf">Confirm password</label><input type="password" id="s-conf" name="confirm" autocomplete="new-password" required></div>
+<button class="btn" type="submit">Create my Scraggy Points account</button>
+<p id="msg-signup" class="msg" role="alert"></p>
+<p class="hint">You get 100 welcome points. Do not use a password you use anywhere else. This is a joke airline.</p>
+</form>
+</div>
+<aside id="wrong-wrong" class="quote" data-page="login" aria-label="A quote from Mdm Wrong-Wrong"></aside>
+</main>
+<footer id="site-footer" class="site-footer"></footer>
+<noscript><p style="text-align:center;padding:16px">This site needs JavaScript. Scraggy Airlines needs many things.</p></noscript>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/login.js"></script>
+</body>
+</html>
