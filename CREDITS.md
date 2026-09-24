@@ -4,7 +4,7 @@ Scraggy Airlines is a fan-made parody website. It is **not affiliated with or en
 
 ## Scraggy image
 
-The site looks for `assets/scraggy.png`. If that file is missing it shows `assets/scraggy-placeholder.svg`, a generic original placeholder mascot made for this project.
+The site looks for `assets/scraggy.png`. If that file is missing it shows `assets/scraggy-placeholder.png`, a generic original placeholder mascot made for this project.
 
 To use a Scraggy image you found online:
 

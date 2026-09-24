@@ -20,7 +20,7 @@ const NAV = [
 ];
 
 const MASCOT = "assets/scraggy.png";
-const MASCOT_FALLBACK = "assets/scraggy-placeholder.svg";
+const MASCOT_FALLBACK = "assets/scraggy-placeholder.png";
 
 function currentPage() {
   const last = location.pathname.split("/").pop();
