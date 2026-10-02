@@ -1,4 +1,4 @@
-// Airport Guide: gates SCG001 to SCG011, plus the hidden Gate 9¾ (needs a typed spell).
+// Airport Guide: gates SCG001 to SCG012, plus the hidden Gate 9¾ (needs a typed spell).
 import { backend } from "./backend.js";
 import { refreshHeader } from "./main.js";
 import { $, el, setMsg } from "./dom.js";
@@ -16,7 +16,8 @@ export const GATES = [
   { id: "SCG009", to: "Departures", joke: "Turn left. No, the other left." },
   { magic: true },
   { id: "SCG010", to: "The rest of the airport", joke: "Still lost? Good." },
-  { id: "SCG011", to: "The last gate", joke: "You made it to the end. There is nothing here. Well done." }
+  { id: "SCG011", to: "The last gate", joke: "You made it to the end. There is nothing here. Well done." },
+  { id: "SCG012", to: "Fuji International Airport (FIA)", joke: "The gate after the last gate. Flights to FIA. Octee Airlines is waiting. Probably.", real: true }
 ];
 
 const WRONG_SPELLS = [

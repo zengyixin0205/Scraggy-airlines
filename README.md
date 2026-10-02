@@ -63,3 +63,8 @@ js/           main.js (header, footer, quote, clock)  data.js (rules)
               backend*.js (demo + Supabase)  book.js  airport.js ...
 supabase/schema.sql
 ```
+
+## Accounts etched in the code, and points shared with Octee Airlines
+
+- `data/accounts.json` holds accounts that can log in on **any device** in demo mode (username, salted PBKDF2 password hash, points). It ships with `Octee` and `Joel`, the same accounts as on the Octee Airlines site. The file is public: never reuse those passwords elsewhere.
+- **Shared points:** on the Octee Airlines site (same web address, `…github.io/Octee-airline/`), a passenger can move Scraggymiles into a pot shared with Scraggy Airlines. The pot belongs to the account with the **same username** here. It is counted in "points to spend" on this site and still shows on Octee. Spending here uses the shared points first and takes them off both airlines; unspent, they stay on both. It lives in the browser (`localStorage` key `scraggy.shared.points`), so it works per browser, on the live site.

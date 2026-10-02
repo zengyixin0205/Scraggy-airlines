@@ -6,7 +6,8 @@ export const PLACES = {
   SIA: { name: "Scraggy International Airport (SIA)", short: "SIA" },
   "scraggy-house": { name: "Scraggy House", short: "Scraggy House" },
   "mdm-wrong-wrong": { name: "Mdm Wrong-Wrong's", short: "Mdm Wrong-Wrong's" },
-  lujin: { name: "Lujin's", short: "Lujin's" }
+  lujin: { name: "Lujin's", short: "Lujin's" },
+  fia: { name: "Fuji International Airport (FIA)", short: "FIA" }
 };
 
 // Every route is SIA <-> one destination.
@@ -16,6 +17,8 @@ export const ROUTES = {
     outNo: "SA101",
     inNo: "SA102",
     gate: "SCG001",
+    // Daily times (Singapore time). out = SIA to destination, in = destination to SIA.
+    outDep: "10:20", outArr: "10:50", inDep: "11:50", inArr: "12:20",
     blurb: "Home base. Snacks not included.",
     detail: "The birthplace of Scraggy Airlines. Come for the ambience, stay because the return flight is delayed."
   },
@@ -24,6 +27,7 @@ export const ROUTES = {
     outNo: "SA103",
     inNo: "SA104",
     gate: "SCG002",
+    outDep: "10:30", outArr: "11:20", inDep: "11:40", inArr: "12:30",
     blurb: "Arrive to be told you are wrong. Free of charge.",
     detail: "Grammar is corrected on arrival. So is your posture, your luggage and your choice of destination."
   },
@@ -32,10 +36,29 @@ export const ROUTES = {
     outNo: "SA105",
     inNo: "SA106",
     gate: "SCG003",
+    outDep: "10:45", outArr: "11:40", inDep: "11:35", inArr: "12:30",
     blurb: "Nobody is sure what happens here. Lujin is.",
     detail: "Lujin has a plan. Lujin will not share the plan. Please bring snacks."
+  },
+  fia: {
+    base: 300,
+    outNo: "SA107",
+    inNo: "SA108",
+    gate: "SCG012",
+    outDep: "11:00", outArr: "12:50", inDep: "14:00", inArr: "15:50",
+    blurb: "Home of Octee Airlines. They say they are doing well.",
+    detail: "Fuji International Airport. Octee Airlines lives here. We fly there anyway. Bring your own peanut."
   }
 };
+
+// Departure and arrival time of a Scraggy flight number, e.g. flightTimes("SA103") -> { dep: "10:30", arr: "11:20" }
+export function flightTimes(flightNo) {
+  for (const r of Object.values(ROUTES)) {
+    if (r.outNo === flightNo) return { dep: r.outDep, arr: r.outArr };
+    if (r.inNo === flightNo) return { dep: r.inDep, arr: r.inArr };
+  }
+  return null;
+}
 
 export const AIRCRAFT = [
   { id: "airbus-777", name: "Airbus 777", blurb: "Has wings. We checked twice.", seats: "Around 300 seats (and one mystery seat)" },

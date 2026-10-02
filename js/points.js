@@ -52,6 +52,11 @@ async function init() {
 
   $("#pts-name").textContent = p.username;
   $("#pts-balance").textContent = fmt(p.points);
+  const sharedNote = $("#pts-shared");
+  if (sharedNote && p.shared) {
+    sharedNote.hidden = false;
+    sharedNote.textContent = `Includes ${fmt(p.shared)} points shared with Octee Airlines. Spend them here and they leave both airlines. Leave them and they stay on both.`;
+  }
   $("#pts-lifetime").textContent = fmt(p.lifetime);
   const badge = $("#pts-tier");
   badge.textContent = tier.name;

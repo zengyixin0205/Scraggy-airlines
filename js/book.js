@@ -4,7 +4,7 @@ import { refreshHeader } from "./main.js";
 import { $, el, setMsg } from "./dom.js";
 import {
   AIRCRAFT, CLASSES, HUB, PLACES, REASONS, ROUTES, SNACKS, SURPRISE,
-  friendlyError, isoDate, legPoints, placeName, planLegs
+  flightTimes, friendlyError, isoDate, legPoints, placeName, planLegs
 } from "./data.js";
 
 const DRAFT_KEY = "scraggy.booking.draft";
@@ -233,6 +233,7 @@ function showResult(res, s) {
   const passes = res.legs.map((leg) => {
     const air = AIRCRAFT.find((a) => a.id === leg.aircraft);
     const cls = CLASSES.find((c) => c.id === (leg.travelClass || s.travelClass));
+    const t = flightTimes(leg.flightNo);
     return el("article", { class: "pass", "aria-label": "Boarding pass " + leg.flightNo },
       el("div", { class: "pass-top" },
         el("span", { class: "flight" }, leg.flightNo),
@@ -241,6 +242,8 @@ function showResult(res, s) {
       el("dl", { class: "review" },
         el("dt", {}, "Passenger"), el("dd", {}, s.name),
         el("dt", {}, "Date"), el("dd", {}, leg.date),
+        el("dt", {}, "Departs"), el("dd", {}, t ? t.dep : "Eventually"),
+        el("dt", {}, "Arrives"), el("dd", {}, t ? t.arr : "Hopefully"),
         el("dt", {}, "Aircraft"), el("dd", {}, air ? air.name : leg.aircraft),
         el("dt", {}, "Class"), el("dd", {}, cls ? cls.name : ""),
         el("dt", {}, "Seat"), el("dd", {}, leg.seat || s.seat),

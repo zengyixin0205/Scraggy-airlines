@@ -25,6 +25,11 @@ create table if not exists public.routes (
   in_no text not null,
   gate text not null
 );
+-- Daily flight times (Singapore time). Added later, so also safe to run on an existing database.
+alter table public.routes add column if not exists out_dep time;
+alter table public.routes add column if not exists out_arr time;
+alter table public.routes add column if not exists in_dep time;
+alter table public.routes add column if not exists in_arr time;
 
 create table if not exists public.bookings (
   id bigint generated always as identity primary key,
@@ -75,8 +80,15 @@ create table if not exists public.secret_finds (
 insert into public.routes (dest_id, base_points, out_no, in_no, gate) values
   ('scraggy-house',   100, 'SA101', 'SA102', 'SCG001'),
   ('mdm-wrong-wrong', 250, 'SA103', 'SA104', 'SCG002'),
-  ('lujin',           250, 'SA105', 'SA106', 'SCG003')
+  ('lujin',           250, 'SA105', 'SA106', 'SCG003'),
+  ('fia',             300, 'SA107', 'SA108', 'SCG012')
 on conflict (dest_id) do nothing;
+
+-- Flight times (must match js/data.js)
+update public.routes set out_dep = '10:20', out_arr = '10:50', in_dep = '11:50', in_arr = '12:20' where dest_id = 'scraggy-house';
+update public.routes set out_dep = '10:30', out_arr = '11:20', in_dep = '11:40', in_arr = '12:30' where dest_id = 'mdm-wrong-wrong';
+update public.routes set out_dep = '10:45', out_arr = '11:40', in_dep = '11:35', in_arr = '12:30' where dest_id = 'lujin';
+update public.routes set out_dep = '11:00', out_arr = '12:50', in_dep = '14:00', in_arr = '15:50' where dest_id = 'fia';
 
 insert into public.rewards (id, name, cost, once_only, needs_note) values
   ('sticker',        'Digital Scraggy sticker',          200,   true,  false),

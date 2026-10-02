@@ -1,0 +1,40 @@
+{
+  "accounts": [
+    {
+      "username": "Joel",
+      "salt": "epsvWMF0NqVg/JEPLA5Ozg==",
+      "hash": "d6zHJPpbH6pwAaNo0v+h7lyxg+LLy9n4u0V5qjzMmeU=",
+      "etchedAt": "2026-10-02T15:34:24.000Z",
+      "points": 100,
+      "lifetime": 100,
+      "ledger": [
+        {
+          "type": "bonus",
+          "t": "2026-10-02T15:34:24.000Z",
+          "label": "Welcome bonus",
+          "delta": 100
+        }
+      ],
+      "redemptions": [],
+      "finds": []
+    },
+    {
+      "username": "Octee",
+      "salt": "hgUbaaojajccceZ1Wn+zYA==",
+      "hash": "lkelpZXzT6A9ae1v6vd5gAaU0e4XVOoAMbVTaQwRERM=",
+      "etchedAt": "2026-10-02T15:34:24.000Z",
+      "points": 100,
+      "lifetime": 100,
+      "ledger": [
+        {
+          "type": "bonus",
+          "t": "2026-10-02T15:34:24.000Z",
+          "label": "Welcome bonus",
+          "delta": 100
+        }
+      ],
+      "redemptions": [],
+      "finds": []
+    }
+  ]
+}

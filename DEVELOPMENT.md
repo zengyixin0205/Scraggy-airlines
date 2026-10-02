@@ -240,6 +240,19 @@ If a user tries Lujin's to Scraggy House, the form shows a joke error: "No direc
 
 Flight numbers look like `SA` plus three digits, e.g. `SA101`. Suggested: SIA to Scraggy House is `SA101`, and Scraggy House to SIA is `SA102`, and so on.
 
+#### Flights and times (daily, Singapore time)
+
+These live in `js/data.js` (`ROUTES`) and the `routes` table, and the **Octee Airlines** site reads them from `js/data.js` for transfers at SIA, so keep them in sync.
+
+| Destination | Out (SIA →) | Times | Back (→ SIA) | Times | Gate |
+|---|---|---|---|---|---|
+| Scraggy House | SA101 | 10:20 → 10:50 | SA102 | 11:50 → 12:20 | SCG001 |
+| Mdm Wrong-Wrong's | SA103 | 10:30 → 11:20 | SA104 | 11:40 → 12:30 | SCG002 |
+| Lujin's | SA105 | 10:45 → 11:40 | SA106 | 11:35 → 12:30 | SCG003 |
+| **Fuji International Airport (FIA)** | **SA107** | 11:00 → 12:50 | **SA108** | 14:00 → 15:50 | **SCG012** |
+
+FIA is the home of **Octee Airlines** (the other joke airline). Scraggy flies there like any other destination: SIA ↔ FIA, still following the one route rule. The boarding pass shows the departure and arrival times (`flightTimes()` in `data.js`).
+
 #### Booking form (`book.html`)
 
 A multi-step form with silly wording. Nothing is charged and no real personal data is needed. Steps:
@@ -264,6 +277,7 @@ Use plain HTML form elements with real labels (accessible and works on phones). 
 | SIA <-> **Scraggy House** | 100 |
 | SIA <-> **Mdm Wrong Wrong's** | 250 |
 | SIA <-> **Lujin's** | 250 |
+| SIA <-> **FIA** (Fuji International Airport) | 300 |
 | Scraggy First class | +50 per leg |
 | Finding **Gate 9¾** (once only, section 8) | 500 |
 | Welcome bonus at sign-up | 100 |
@@ -436,7 +450,7 @@ A silly, unhelpful guide to **Scraggy International Airport (SIA)**, the hub eve
 
 ### Gates
 
-All gates are at SIA. Flights to the three destinations leave from SCG001 to SCG003; inbound flights arrive at the same gates.
+All gates are at SIA. Flights to the four destinations leave from SCG001 to SCG003 and SCG012 (FIA); inbound flights arrive at the same gates.
 
 Gates are numbered **SCG001**, **SCG002**, **SCG003** and so on. Each gate gets a short joke description. Example content (edit freely):
 
@@ -454,8 +468,9 @@ Gates are numbered **SCG001**, **SCG002**, **SCG003** and so on. Each gate gets 
 | **Gate 9¾** | ✨ Magic only ✨ | See below |
 | SCG010 | The rest of the airport | "Still lost? Good." |
 | SCG011 | The last gate | "You made it to the end. There is nothing here. Well done." |
+| SCG012 | Fuji International Airport (FIA) | "The gate after the last gate. Flights to FIA. Octee Airlines is waiting. Probably." |
 
-The airport has **11 gates, SCG001 to SCG011**, plus the hidden Gate 9¾. Gate 9¾ sits **between SCG009 and SCG010** in the list, on a wall marked "Gate 9¾", and has no normal bookings or direct link.
+The airport has **12 gates, SCG001 to SCG012**, plus the hidden Gate 9¾. Gate 9¾ sits **between SCG009 and SCG010** in the list, on a wall marked "Gate 9¾", and has no normal bookings or direct link.
 
 ### How the gate list is stored
 
@@ -469,11 +484,12 @@ export const GATES = [
   // ...SCG004 to SCG009...
   { id: "GATE-9-3-4", label: "Gate 9¾", magic: true },
   { id: "SCG010", to: "The rest of the airport", joke: "Still lost? Good." },
-  { id: "SCG011", to: "The last gate", joke: "You made it to the end. There is nothing here. Well done." }
+  { id: "SCG011", to: "The last gate", joke: "You made it to the end. There is nothing here. Well done." },
+  { id: "SCG012", to: "Fuji International Airport (FIA)", joke: "The gate after the last gate. Flights to FIA. Octee Airlines is waiting. Probably.", real: true }
 ];
 ```
 
-When a flight is booked, the gate for that route (SCG001 to SCG003) is shown on the boarding pass and saved in `bookings.gate`. Also add a simple SIA map or list at the top of the page: "You are here (probably)."
+When a flight is booked, the gate for that route (SCG001 to SCG003, or SCG012 for FIA) is shown on the boarding pass and saved in `bookings.gate`. Also add a simple SIA map or list at the top of the page: "You are here (probably)."
 
 ### Gate 9¾: the magic gate
 
@@ -578,7 +594,8 @@ Notes:
 
 - [ ] Every page has the logo, nav, its headline, and a Mdm Wrong Wrong quote
 - [ ] Home says **FLY SOMEWHERE EVENTUALLY**; Baggage says **YOUR BAGS. OUR MYSTERY.**
-- [ ] All three destinations appear: Scraggy House, Mdm Wrong Wrong's, Lujin's
+- [ ] All four destinations appear: Scraggy House, Mdm Wrong Wrong's, Lujin's, Fuji International Airport (FIA)
+- [ ] SA107 / SA108 fly SIA ↔ FIA from gate SCG012; boarding passes show departure and arrival times
 - [ ] All four aircraft appear; Scraggy is named CEO
 - [ ] Sign up works, duplicate usernames are rejected, weak passwords are rejected
 - [ ] Log in works on a second device or browser
@@ -613,7 +630,7 @@ Notes:
 | Tiers | Bronze 500+, Gold 1,000+, Platinum Pants 10,000+, Scraggy Pants 25,000+ (placeholder), all based on **lifetime points** |
 | Points and prices | 100 / 250 points per flight and the section 7.3 reward prices are the starting numbers |
 | Gate 9¾ | Opened by typing the spell `scraggy-cadabra` |
-| Gate count | SCG001 to SCG011, plus Gate 9¾ |
+| Gate count | SCG001 to SCG012, plus Gate 9¾ |
 | Backend | Supabase (section 2), so accounts work on any device |
 
 ### Still open (small, and easy to change later)
@@ -622,3 +639,20 @@ Notes:
 2. **Quote spelling:** "Mdm Wrong Wrong" or "Mdm Wrong-Wrong" everywhere?
 3. **Flight numbers and references:** OK with `SA101` and up, and booking references like `SCRAG-4821`?
 4. **Classes:** are Scraggy Economy, Business and **First** (with pants) right, and is +50 points for First okay?
+
+
+---
+
+## Accounts etched in the code, and points shared with Octee Airlines
+
+Both features are in `js/backend-local.js` (demo mode, no server).
+
+**Etched accounts (`data/accounts.json`).** Accounts in this file can log in on any device. `logIn` uses the file's copy when the browser has no copy of that account (or an older one, by `etchedAt`) and the password matches the file's salted PBKDF2 hash (100,000 iterations). `signUp` refuses a username that is in the file. The file ships with `Octee` and `Joel`, matching the etched accounts on the Octee Airlines site. The file is public, so these passwords must not be used anywhere else.
+
+**Shared points with Octee Airlines.** The Octee site lives at the same web address (`…github.io/Octee-airline/`), so both sites read the same browser storage. The key `scraggy.shared.points` holds `{ "username": points }`:
+
+- On Octee, a passenger shares Scraggymiles (earned on Scraggy flights booked there) into the pot.
+- Here, `getProfile().points` = own points + the pot for the **same username** (`shared` says how much is from the pot); the Points page explains it.
+- `redeem` uses shared points first, so spending them here takes them off both airlines. Unspent, they stay visible on both.
+- Shared points do not change lifetime points or the tier.
+- It is per browser and only works where both sites share one address (the live site). With Supabase accounts switched on, these two features are not used.
