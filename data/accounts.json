@@ -35,6 +35,42 @@
       ],
       "redemptions": [],
       "finds": []
+    },
+    {
+      "username": "Marcus",
+      "salt": "qXj+pYRLx6fMyMKnhqZnug==",
+      "hash": "3zLgLqXJu5A0Tg4enyZFBuL+eHoSn/p9SrzLiYAWUXI=",
+      "etchedAt": "2026-10-03T12:00:00.000Z",
+      "points": 100,
+      "lifetime": 100,
+      "ledger": [
+        {
+          "type": "bonus",
+          "t": "2026-10-03T12:00:00.000Z",
+          "label": "Welcome bonus",
+          "delta": 100
+        }
+      ],
+      "redemptions": [],
+      "finds": []
+    },
+    {
+      "username": "Lu Jin",
+      "salt": "UcR1M+BcnsJlHAlo5M0bTw==",
+      "hash": "ovlLdxpYbfVoFLABCbGBxkoF4zMjE5eaKxcJJNVU8Oc=",
+      "etchedAt": "2026-10-03T12:00:00.000Z",
+      "points": 100,
+      "lifetime": 100,
+      "ledger": [
+        {
+          "type": "bonus",
+          "t": "2026-10-03T12:00:00.000Z",
+          "label": "Welcome bonus",
+          "delta": 100
+        }
+      ],
+      "redemptions": [],
+      "finds": []
     }
   ]
 }
